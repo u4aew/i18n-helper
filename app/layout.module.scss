@@ -1,0 +1,17 @@
+.layout {
+  .header {
+    padding: 1rem;
+    background-color: var(--header-background-color);
+  }
+
+  .main {
+    padding: 1rem;
+    flex: 1;
+  }
+
+  .footer {
+    grid-area: footer;
+    padding: 1rem;
+    background-color: var(--footer-background-color);
+  }
+}
