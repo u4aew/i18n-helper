@@ -2,6 +2,7 @@ import { Open_Sans } from 'next/font/google';
 import { BASE_URL } from '@/config';
 import { Metadata } from 'next';
 import type { Viewport } from 'next';
+import { Header } from '@/components/Header';
 import styles from './layout.module.scss';
 import './globals.css';
 
@@ -14,9 +15,7 @@ const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <html lang="en" className={roboto.className}>
       <body className={styles.layout}>
-        <header className={styles.header}>
-            header
-        </header>
+      <Header />
         <main className={styles.main}>
           <div className={styles.content}>{children}</div>
         </main>
