@@ -1,5 +1,4 @@
 import { Open_Sans } from 'next/font/google';
-import { BASE_URL } from '@/config';
 import { Metadata } from 'next';
 import type { Viewport } from 'next';
 import { Header } from '@/components/Header';
@@ -34,27 +33,27 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'Financial Exchange Platform',
-    template: '%s | Financial Exchange Platform',
+    default: 'My Localizer',
+    template: '%s | My Localizer',
   },
   description:
-    'A leading financial exchange platform for trading and investment.',
-  applicationName: 'Financial Exchange Platform',
+    'An intuitive tool for JSON localization and length analysis across languages.',
+  applicationName: 'My Localizer',
   authors: [
     {
-      name: 'Financial Exchange Team',
-      url: BASE_URL,
+      name: 'My Localizer Team',
+      url: 'https://mylocalizer.example.com',
     },
   ],
-  metadataBase: new URL(BASE_URL),
+  metadataBase: new URL('https://mylocalizer.example.com'),
   generator: 'Next.js',
-  keywords: ['financial', 'exchange', 'trading', 'investment', 'platform'],
+  keywords: ['localization', 'JSON', 'translation', 'language', 'length analysis'],
   referrer: 'origin',
-  creator: 'Financial Exchange Team',
-  publisher: 'Financial Exchange Inc.',
+  creator: 'My Localizer Team',
+  publisher: 'My Localizer Inc.',
   robots: { index: true, follow: true },
   alternates: {
-    canonical: BASE_URL,
+    canonical: 'https://mylocalizer.example.com',
   },
   icons: {
     icon: '/favicon.ico',
@@ -62,32 +61,32 @@ export const metadata: Metadata = {
   },
   manifest: '/manifest.webmanifest',
   openGraph: {
-    title: 'Financial Exchange Platform',
+    title: 'My Localizer',
     description:
-      'A leading financial exchange platform for trading and investment.',
+      'An intuitive tool for JSON localization and length analysis across languages.',
     type: 'website',
-    url: BASE_URL,
-    siteName: 'Financial Exchange Platform',
+    url: 'https://localizer.fancyapp.site/',
+    siteName: 'My Localizer',
     images: [
       {
         url: '/images/og-image.jpg',
         width: 800,
         height: 600,
-        alt: 'Financial Exchange Platform',
+        alt: 'My Localizer',
       },
     ],
   },
   appleWebApp: {
     capable: true,
-    title: 'Financial Exchange Platform',
+    title: 'My Localizer',
     statusBarStyle: 'black-translucent',
   },
   formatDetection: {
     telephone: false,
   },
-  abstract: 'A leading financial exchange platform for trading and investment.',
-  category: 'Finance',
-  classification: 'Financial Services',
+  abstract: 'An intuitive tool for JSON localization and length analysis.',
+  category: 'Software',
+  classification: 'Localization Tools',
   other: {
     'msapplication-TileColor': '#0a74da',
   },
