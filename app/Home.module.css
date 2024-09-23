@@ -1,17 +1,23 @@
 .container {
-    max-width: 800px;
+}
+
+.wrapper {
+    max-width: var(--box-max-width);
     margin: 0 auto;
-    padding: 20px;
+}
+
+.title {
+    margin-bottom: 20px;
 }
 
 .textareas {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.textareas div {
-    width: 48%;
+    margin-left: -5px;
+    margin-right: -5px;
+    .item {
+        margin: 0 5px;
+        flex: 1;
+    }
 }
 
 .textarea {

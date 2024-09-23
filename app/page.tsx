@@ -1,14 +1,35 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { TextArea } from '@/components/TextArea';
+import { Result } from '@/components/Result';
 import styles from './Home.module.css';
 
-const Home = () => {
-  const [originalJson, setOriginalJson] = useState('');
-  const [translatedJson, setTranslatedJson] = useState('');
-  const [differences, setDifferences] = useState({});
+const original = {
+  "welcome": "Welcome",
+  "login": "Login",
+  "logout": "Logout",
+  "settings": "Settings",
+  "profile": "Profile",
+  "help": "Help"
+}
 
-  const calculateDifferences = () => {
+const translate = {
+  "welcome": "Hoşgeldiniz",
+  "login": "Giriş Yapınız",
+  "logout": "Çıkış Yapınız",
+  "settings": "Ayarlarınızı Yapılandırın",
+  "profile": "Profiliniz",
+  "help": "Yardım Alınız"
+}
+
+const Home = () => {
+  const [originalJson, setOriginalJson] = useState(JSON.stringify(original, null, 2));
+  const [translatedJson, setTranslatedJson] = useState(JSON.stringify(translate, null, 2));
+  const [differences, setDifferences] = useState({});
+  const [threshold, setThreshold] = useState(5);
+
+  const calculateDifferences = (originalJson: string, translatedJson: string) => {
     try {
       const original = JSON.parse(originalJson);
       const translated = JSON.parse(translatedJson);
@@ -19,11 +40,14 @@ const Home = () => {
           const originalLength = original[key].length;
           const translatedLength = translated[key].length;
           const lengthDifference = Math.abs(originalLength - translatedLength);
-          const percentageDifference = (lengthDifference / originalLength) * 100;
 
-          if (percentageDifference > 20) { // Threshold for significant difference
-            //@ts-ignore
-            diff[key] = percentageDifference.toFixed(2) + '%';
+          if (lengthDifference > threshold) {
+            // @ts-ignore
+            diff[key] = {
+              originalLength,
+              translatedLength,
+              lengthDifference
+            };
           }
         }
       }
@@ -34,44 +58,46 @@ const Home = () => {
     }
   };
 
+  useEffect(() => {
+    calculateDifferences(originalJson, translatedJson);
+  }, [originalJson, translatedJson, threshold]);
+
   return (
     <div className={styles.container}>
-      <h1>Localization Length Checker</h1>
-      <div className={styles.textareas}>
-        <div>
-          <h2>Original JSON</h2>
-          <textarea
-            className={'textarea'}
-            value={originalJson}
-            onChange={(e) => setOriginalJson(e.target.value)}
-            placeholder="Enter original JSON here"
+      <div className={styles.wrapper}>
+        <h1 className={styles.title}>Localization Length Checker</h1>
+        <div className={styles.textareas}>
+          <div className={styles.item}>
+            <TextArea
+              label="Original JSON"
+              value={originalJson}
+              onChange={(e) => setOriginalJson(e.target.value)}
+              placeholder="Enter original JSON here"
+            />
+          </div>
+          <div className={styles.item}>
+            <TextArea
+              label="Translated JSON"
+              value={translatedJson}
+              onChange={(e) => setTranslatedJson(e.target.value)}
+              placeholder="Enter translated JSON here"
+            />
+          </div>
+        </div>
+        <div className={styles.threshold}>
+          <label htmlFor="threshold">Character Difference Threshold: </label>
+          <input
+            type="number"
+            id="threshold"
+            value={threshold}
+            onChange={(e) => setThreshold(Number(e.target.value))}
+            min="0"
           />
         </div>
-        <div>
-          <h2>Translated JSON</h2>
-          <textarea
-            className={'textarea'}
-            value={translatedJson}
-            onChange={(e) => setTranslatedJson(e.target.value)}
-            placeholder="Enter translated JSON here"
-          />
+        <div className={styles.results}>
+          <h2>Significant Differences</h2>
+          <Result differences={differences} threshold={threshold} />
         </div>
-      </div>
-      <button className="button" onClick={calculateDifferences}>Check Differences</button>
-      <div className={styles.results}>
-        <h2>Significant Differences</h2>
-        {Object.keys(differences).length > 0 ? (
-          <ul className={'ul'}>
-            {Object.entries(differences).map(([key, diff]) => (
-              <li className={'li'} key={key}>
-                {/*@ts-ignore*/}
-                <strong>{key}:</strong> {diff} difference
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>No significant differences found.</p>
-        )}
       </div>
     </div>
   );

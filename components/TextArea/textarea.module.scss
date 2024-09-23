@@ -1,0 +1,19 @@
+.box {
+  .label {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+  .textarea {
+    display: block;
+    width: 100%;
+    background-color: #FAFAFA;
+    color: #030303;
+    border: 1px solid #E5E5E7;
+    border-radius: 5px;
+    resize: none;
+    outline: none;
+    min-height: 400px;
+    padding: 20px;
+  }
+}
