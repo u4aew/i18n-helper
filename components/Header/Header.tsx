@@ -1,5 +1,5 @@
 import { Logo } from '@/components/Logo';
-import styles from './Header.module.scss';
+import styles from './header.module.scss';
 
 import logo from './icon/logo.png'
 
