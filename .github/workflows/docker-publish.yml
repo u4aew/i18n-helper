@@ -24,4 +24,4 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: u4aew/textSizer:latest
+          tags: u4aew/text-sizer:latest
