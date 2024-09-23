@@ -1,6 +1,3 @@
-
----
-
 # JSON Localizer Pro
 ![intro](img/intro.jpg)
 JSON Localizer Pro is a web-based tool designed to assist with JSON localization and length analysis across different languages. It helps identify potential issues with text length that might affect user interfaces when translating content.
