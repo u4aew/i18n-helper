@@ -10,9 +10,18 @@ export const Result = ({ differences, threshold }) => (
         {Object.entries(differences).map(([key, { originalLength, translatedLength, lengthDifference }]) => (
           <li
             key={key}
-            className={lengthDifference > threshold ? styles.different : ''}
+            className={styles.li}
           >
-            <strong>{key}:</strong> original: {originalLength} | translate: {translatedLength}
+            <div className={lengthDifference > threshold ? styles.different : ''}>
+              <div className={styles.item}>
+                <div className={styles.side}>
+                  <strong>{key}:</strong>
+                </div>
+                <div className={styles.main}>
+                  Original: {originalLength} | Translate: {translatedLength}
+                </div>
+              </div>
+            </div>
           </li>
         ))}
       </ul>

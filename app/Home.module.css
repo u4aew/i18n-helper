@@ -1,4 +1,5 @@
 .container {
+    padding: 20px;
 }
 
 .wrapper {
@@ -8,16 +9,21 @@
 
 .title {
     margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
 }
 
 .textareas {
     display: flex;
+    flex-wrap: wrap;
     margin-left: -5px;
     margin-right: -5px;
-    .item {
-        margin: 0 5px;
-        flex: 1;
-    }
+}
+
+.item {
+    margin: 0 5px;
+    flex: 1;
+    min-width: 300px; /* Ensures a reasonable size on smaller screens */
 }
 
 .textarea {
@@ -38,14 +44,31 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    display: block;
+    margin: 20px auto;
 }
 
 .button:hover {
     background-color: #005bb5;
 }
 
-.results {
-    margin-top: 20px;
+.subtitle {
+    margin-bottom: 20px;
+}
+
+.threshold {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.input {
+    padding: 5px;
+    background-color: #FAFAFA;
+    color: #030303;
+    border: 1px solid #E5E5E7;
+    max-width: 50px;
+    border-radius: 4px;
+    margin-left: 5px;
 }
 
 .ul {
@@ -59,4 +82,23 @@
     padding: 10px;
     border-left: 5px solid #ff4d4d;
     border-radius: 4px;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 600px) {
+    .textareas {
+        flex-direction: column;
+    }
+
+    .item {
+        margin: 10px 0;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .title {
+        font-size: 20px;
+    }
 }

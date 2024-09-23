@@ -65,7 +65,7 @@ const Home = () => {
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        <h1 className={styles.title}>Localization Length Checker</h1>
+        <h1 className={styles.title}>Localization key length checker</h1>
         <div className={styles.textareas}>
           <div className={styles.item}>
             <TextArea
@@ -87,15 +87,14 @@ const Home = () => {
         <div className={styles.threshold}>
           <label htmlFor="threshold">Character Difference Threshold: </label>
           <input
-            type="number"
             id="threshold"
             value={threshold}
-            onChange={(e) => setThreshold(Number(e.target.value))}
-            min="0"
+            className={styles.input}
+            onChange={(e) => setThreshold(Number(e.target.value) || 0)}
           />
         </div>
         <div className={styles.results}>
-          <h2>Significant Differences</h2>
+          <h2 className={styles.subtitle}>Significant Differences</h2>
           <Result differences={differences} threshold={threshold} />
         </div>
       </div>
