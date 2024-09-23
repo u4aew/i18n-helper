@@ -6,4 +6,21 @@
 .wrapper {
   max-width: var(--box-max-width);
   margin: 0 auto;
+  display: flex;
+}
+
+.side {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.link {
+  transition: .1s;
+  .img {
+    display: block;
+    max-width: 30px;
+  }
+  &:hover {
+    opacity: 0.5;
+  }
 }

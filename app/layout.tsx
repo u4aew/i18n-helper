@@ -33,16 +33,16 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'My Localizer',
-    template: '%s | My Localizer',
+    default: 'Localization key length checker',
+    template: '%s | Localization key length checker',
   },
   description:
     'An intuitive tool for JSON localization and length analysis across languages.',
-  applicationName: 'My Localizer',
+  applicationName: 'Localization key length checker',
   authors: [
     {
       name: 'My Localizer Team',
-      url: 'https://mylocalizer.example.com',
+      url: 'https://localizer.fancyapp.site/',
     },
   ],
   metadataBase: new URL('https://mylocalizer.example.com'),
