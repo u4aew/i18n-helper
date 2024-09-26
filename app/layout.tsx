@@ -33,27 +33,27 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: 'Localization key length checker',
-    template: '%s | Localization key length checker',
+    default: 'i18n helper',
+    template: '%s | i18n helper',
   },
   description:
     'An intuitive tool for JSON localization and length analysis across languages.',
-  applicationName: 'Localization key length checker',
+  applicationName: 'i18n helper',
   authors: [
     {
-      name: 'My Localizer Team',
-      url: 'https://localizer.fancyapp.site/',
+      name: 'i18n helper',
+      url: 'https://text-size.fancyapp.site/',
     },
   ],
-  metadataBase: new URL('https://mylocalizer.example.com'),
+  metadataBase: new URL('https://text-size.fancyapp.site'),
   generator: 'Next.js',
   keywords: ['localization', 'JSON', 'translation', 'language', 'length analysis'],
   referrer: 'origin',
-  creator: 'My Localizer Team',
-  publisher: 'My Localizer Inc.',
+  creator: 'i18n helper Team',
+  publisher: 'i18n helper Inc.',
   robots: { index: true, follow: true },
   alternates: {
-    canonical: 'https://mylocalizer.example.com',
+    canonical: 'https://text-size.fancyapp.site',
   },
   icons: {
     icon: '/favicon.ico',
@@ -61,24 +61,24 @@ export const metadata: Metadata = {
   },
   manifest: '/manifest.webmanifest',
   openGraph: {
-    title: 'My Localizer',
+    title: 'i18n helper',
     description:
       'An intuitive tool for JSON localization and length analysis across languages.',
     type: 'website',
-    url: 'https://localizer.fancyapp.site/',
-    siteName: 'My Localizer',
+    url: 'https://text-size.fancyapp.site/',
+    siteName: 'i18n helper',
     images: [
       {
         url: '/images/og-image.jpg',
         width: 800,
         height: 600,
-        alt: 'My Localizer',
+        alt: 'i18n helper',
       },
     ],
   },
   appleWebApp: {
     capable: true,
-    title: 'My Localizer',
+    title: 'i18n helper',
     statusBarStyle: 'black-translucent',
   },
   formatDetection: {

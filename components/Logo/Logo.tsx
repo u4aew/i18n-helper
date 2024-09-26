@@ -9,7 +9,7 @@ export const Logo = () => {
       </div>
     </div>
     <div className={styles.side}>
-      <div className={styles.title}>JSON Localizer Pro</div>
+      <div className={styles.title}>i18n helper</div>
     </div>
   </div>
 }
